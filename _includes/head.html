@@ -1,0 +1,30 @@
+<head>
+ <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  <script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | relative_url }}"></script>
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
+
+  {% if page.custom_css %}
+    {% for stylesheet in page.custom_css %}
+      {% assign url = "/css/" | append: stylesheet | append: ".css" %}
+      <link rel="stylesheet" href="{{ url | relative_url }}" media="screen" type="text/css">
+    {% endfor %}
+  {% endif %}
+
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      {% assign url = "/javascripts/" | append: js_file %}
+      <script src="{{url | relative_url}}" type="text/javascript"></script>
+    {% endfor %}
+  {% endif %}
+
+</head>
